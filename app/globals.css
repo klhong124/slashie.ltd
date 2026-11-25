@@ -13,7 +13,7 @@
   --color-action: #00dc82;
   --color-action-hover: #00c275;
   --color-action-pressed: #02a567;
-  --color-accent: #02a567;
+  --color-accent: #048654;
   --color-line: #e4e4e7;
   --color-line-strong: #d4d4d8;
   --color-line-hover: #a1a1aa;
@@ -79,9 +79,10 @@ summary::-webkit-details-marker {
   background: radial-gradient(ellipse 62% 100% at 50% 0%, #f4f4f5 0%, transparent 100%);
 }
 
+/* Starts just above zero: fully transparent text is not "painted", which would delay LCP. */
 @keyframes fade-rise {
   from {
-    opacity: 0;
+    opacity: 0.01;
     transform: translateY(8px);
   }
   to {
@@ -106,10 +107,115 @@ summary::-webkit-details-marker {
   animation-delay: 240ms;
 }
 
+.cta-glow {
+  background: radial-gradient(closest-side, rgb(0 220 130 / 0.28), transparent);
+}
+
+.product-glow {
+  background: radial-gradient(ellipse 60% 80% at 100% 0%, #e7fbf0 0%, transparent 70%);
+}
+
+.faq::details-content {
+  block-size: 0;
+  overflow-y: clip;
+  transition:
+    block-size 280ms cubic-bezier(0.2, 0, 0, 1),
+    content-visibility 280ms allow-discrete;
+}
+
+.faq[open]::details-content {
+  block-size: auto;
+}
+
+:root {
+  interpolate-size: allow-keywords;
+}
+
+@keyframes view-rise {
+  from {
+    transform: translateY(32px);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes brief-row {
+  from {
+    opacity: 0;
+    transform: translateX(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes brief-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .brief {
+    animation: float 6s ease-in-out 1.2s infinite;
+  }
+
+  .brief-row {
+    animation: brief-row 480ms cubic-bezier(0, 0, 0, 1) backwards;
+  }
+
+  .brief-progress {
+    transform-origin: left;
+    animation: brief-progress 1200ms cubic-bezier(0.16, 1, 0.3, 1) 700ms backwards;
+  }
+
+  .pulse-dot::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: inherit;
+    animation: pulse-ring 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq::details-content {
+    transition: none;
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   @supports (animation-timeline: view()) {
+    /* Transform only: fading here would leave half-revealed text below contrast minimums. */
     .view-rise {
-      animation: fade-rise 800ms cubic-bezier(0.16, 1, 0.3, 1) both;
+      animation: view-rise 800ms cubic-bezier(0.16, 1, 0.3, 1) both;
       animation-timeline: view();
       animation-range: entry 0% cover 30%;
     }

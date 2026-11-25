@@ -21,7 +21,14 @@ export const company = {
   linkedin: "https://www.linkedin.com/company/slashie-app",
   github: "https://github.com/SlashieApp/web",
   githubOrg: "https://github.com/SlashieApp",
+  /**
+   * TODO(owner): Add a real WhatsApp Business number in international format
+   * without "+" or spaces (e.g. "447..."). WhatsApp buttons render only when set.
+   */
+  whatsapp: "" as string,
 } as const;
+
+export const whatsappUrl = company.whatsapp ? `https://wa.me/${company.whatsapp}` : null;
 
 export const registeredOffice = `${company.office.street}, ${company.office.locality}, ${company.office.postalCode}`;
 

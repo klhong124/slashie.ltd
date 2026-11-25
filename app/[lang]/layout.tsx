@@ -4,9 +4,10 @@ import { notFound } from "next/navigation";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { company } from "@/content/company";
-import { getCopy, isLocale, localePath } from "@/content/get-copy";
+import { getCopy, isLocale } from "@/content/get-copy";
 import { locales } from "@/content/types";
-import { organizationJsonLd } from "@/lib/json-ld";
+import { MobileCta } from "@/components/mobile-cta";
+import { JsonLd, organizationJsonLd } from "@/lib/json-ld";
 import "../globals.css";
 
 const geist = Geist({
@@ -28,37 +29,14 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Prom
   const { lang } = await params;
   if (!isLocale(lang)) return {};
   const copy = getCopy(lang);
-  const canonical = new URL(localePath(lang), company.url).toString();
 
   return {
     metadataBase: new URL(company.url),
-    title: copy.meta.title,
-    description: copy.meta.description,
+    title: { default: copy.home.meta.title, template: `%s · ${company.name}` },
+    description: copy.home.meta.description,
     applicationName: company.name,
     authors: [{ name: company.name, url: company.url }],
     creator: company.name,
-    alternates: {
-      canonical,
-      languages: {
-        "en-GB": company.url,
-        "zh-HK": new URL("/zh-hk", company.url).toString(),
-        "x-default": company.url,
-      },
-    },
-    openGraph: {
-      type: "website",
-      url: canonical,
-      siteName: company.name,
-      title: copy.meta.title,
-      description: copy.meta.description,
-      locale: copy.meta.ogLocale,
-      alternateLocale: lang === "en" ? ["zh_HK"] : ["en_GB"],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: copy.meta.title,
-      description: copy.meta.description,
-    },
     robots: { index: true, follow: true },
   };
 }
@@ -70,17 +48,25 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
 
   return (
     <html lang={copy.htmlLang} className={`${geist.variable} h-full antialiased`}>
-      <body className="min-h-full">
+      <body className="min-h-full pb-[76px] lg:pb-0">
         <a href="#main" className="skip-link">
-          {copy.skip}
+          {copy.chrome.skip}
         </a>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd(copy)) }}
-        />
+        <JsonLd data={organizationJsonLd(copy)} />
         <Header copy={copy} />
-        {children}
+        <div className="relative">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-y-0 right-0 left-0 z-[1] hidden lg:block"
+          >
+            <div className="mx-auto h-full max-w-[80rem] border-x border-line" />
+          </div>
+          <main id="main" className="relative">
+            {children}
+          </main>
+        </div>
         <Footer copy={copy} />
+        <MobileCta locale={lang} label={copy.chrome.mobileCta} />
       </body>
     </html>
   );

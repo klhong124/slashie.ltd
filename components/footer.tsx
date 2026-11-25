@@ -1,73 +1,91 @@
+import Link from "next/link";
 import { ExternalLink } from "@/components/external-link";
+import { Logo } from "@/components/logo";
+import { Eyebrow } from "@/components/section";
 import { company } from "@/content/company";
+import { localeHref } from "@/content/get-copy";
 import type { SiteCopy } from "@/content/types";
 
 export function Footer({ copy }: { copy: SiteCopy }) {
-  const { footer } = copy;
+  const { chrome, locale } = copy;
+  const { footer } = chrome;
 
   return (
-    <footer className="border-t border-line py-12">
+    <footer className="border-t border-line bg-canvas py-14">
       <div className="mx-auto grid w-full max-w-[80rem] gap-10 px-4 md:grid-cols-12 md:px-6 lg:px-8">
-        <div className="md:col-span-6">
-          <p className="text-lg font-medium tracking-[-0.015em]">Slashie Ltd</p>
-          <p className="mt-3 max-w-md text-sm leading-6 text-muted">{footer.registration}</p>
-          <p className="mt-3 text-sm">
-            <ExternalLink href={company.registerUrl} className="text-link underline underline-offset-4">
-              {footer.register}
-            </ExternalLink>
-          </p>
-          <address className="mt-3 text-sm not-italic">
-            <a href={`mailto:${company.email}`} className="text-link underline underline-offset-4">
-              {company.email}
-            </a>
-          </address>
+        <div className="md:col-span-5">
+          <Logo className="h-7 w-auto" />
+          <p className="mt-4 max-w-sm text-base leading-6 text-pretty text-muted">{footer.tagline}</p>
+          <a
+            href={`mailto:${company.email}`}
+            className="mt-4 inline-flex min-h-11 items-center text-base font-medium text-link underline underline-offset-4"
+          >
+            {company.email}
+          </a>
         </div>
-        <nav aria-label={footer.onThisPage} className="md:col-span-3">
-          <p className="text-xs font-medium tracking-[0.08em] text-subtle-text uppercase">{footer.onThisPage}</p>
-          <ul className="mt-3 space-y-2">
-            {copy.nav.map((item) => (
+        <nav aria-label={footer.pages} className="md:col-span-2">
+          <Eyebrow>{footer.pages}</Eyebrow>
+          <ul className="mt-3 space-y-1">
+            {chrome.nav.map((item) => (
               <li key={item.href}>
-                <a href={item.href} className="text-sm hover:text-link">
+                <Link
+                  href={localeHref(locale, item.href)}
+                  className="inline-flex min-h-9 items-center text-sm hover:text-link"
+                >
                   {item.label}
-                </a>
+                </Link>
               </li>
             ))}
-            <li>
-              <a href="#enquire" className="text-sm hover:text-link">
-                {copy.enquireLabel}
-              </a>
-            </li>
           </ul>
         </nav>
-        <div className="md:col-span-3">
-          <p className="text-xs font-medium tracking-[0.08em] text-subtle-text uppercase">{footer.elsewhere}</p>
-          <ul className="mt-3 space-y-2 text-sm">
+        <div className="md:col-span-2">
+          <Eyebrow>{footer.products}</Eyebrow>
+          <ul className="mt-3 space-y-1 text-sm">
             <li>
-              <ExternalLink href="https://slashie.app" className="hover:text-link">
+              <ExternalLink newTab={chrome.newTab} href="https://slashie.app" className="inline-flex min-h-9 items-center hover:text-link">
                 slashie.app
               </ExternalLink>
             </li>
             <li>
-              <ExternalLink href="https://dan.partners" className="hover:text-link">
+              <ExternalLink newTab={chrome.newTab} href="https://dan.partners" className="inline-flex min-h-9 items-center hover:text-link">
                 dan.partners
               </ExternalLink>
             </li>
+          </ul>
+        </div>
+        <div className="md:col-span-3">
+          <Eyebrow>{footer.contact}</Eyebrow>
+          <ul className="mt-3 space-y-1 text-sm">
             <li>
-              <ExternalLink href={company.github} className="hover:text-link">
-                {footer.github}
+              <ExternalLink newTab={chrome.newTab} href={company.linkedin} className="inline-flex min-h-9 items-center hover:text-link">
+                LinkedIn
               </ExternalLink>
             </li>
             <li>
-              <ExternalLink href={company.linkedin} className="hover:text-link">
-                {footer.linkedin}
+              <ExternalLink newTab={chrome.newTab} href={company.github} className="inline-flex min-h-9 items-center hover:text-link">
+                GitHub
+              </ExternalLink>
+            </li>
+            <li>
+              <ExternalLink
+                href={company.registerUrl}
+                className="inline-flex min-h-9 items-center hover:text-link"
+              >
+                {footer.register}
               </ExternalLink>
             </li>
           </ul>
         </div>
       </div>
-      <p className="mx-auto mt-10 w-full max-w-[80rem] px-4 text-xs text-subtle-text md:px-6 lg:px-8">
-        © 2026 {company.name}
-      </p>
+      <div className="mx-auto mt-12 flex w-full max-w-[80rem] flex-col gap-3 border-t border-line px-4 pt-6 text-xs leading-5 text-subtle-text md:flex-row md:justify-between md:px-6 lg:px-8">
+        <p className="max-w-3xl">{footer.registration}</p>
+        <p className="flex shrink-0 gap-4">
+          <Link href={localeHref(locale, "/privacy")} className="hover:text-link">
+            {footer.privacy}
+          </Link>
+          <span>© 2026 {company.name}</span>
+        </p>
+      </div>
     </footer>
   );
 }

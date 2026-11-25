@@ -2,7 +2,7 @@
 
 Corporate site for [Slashie Ltd](https://slashie.ltd), a UK company (no. 17276315) that builds products and provides web and frontend services.
 
-The page is a single scroll: an introduction, Slashie, DanPartners, web and frontend services, a short company story, and an enquiry link. Copy lives in typed files under `content/`. Sections are components under `components/`. The visual system follows [slashie.app](https://slashie.app): Geist, the green `#00DC82` pill, white cards with a hairline and a light shadow.
+The page is a single scroll: a studio introduction, Slashie, DanPartners, web and frontend services (including Cantonese), how an engagement runs, a short company story, and an enquiry link. English is at `/`. Traditional Chinese (zh-HK) is at `/zh-hk`. Copy for each locale lives in `content/en.ts` and `content/zh-hk.ts`. The visual system follows [slashie.app](https://slashie.app): Geist, the green `#00DC82` pill, white cards with a hairline and a light shadow.
 
 ## Requirements
 

@@ -1,14 +1,21 @@
+import { notFound } from "next/navigation";
 import { About } from "@/components/about";
 import { Enquire } from "@/components/enquire";
 import { Hero } from "@/components/hero";
+import { Process } from "@/components/process";
 import { Products } from "@/components/products";
 import { Services } from "@/components/services";
+import { getCopy, isLocale } from "@/content/get-copy";
 
 function Rule() {
   return <div aria-hidden="true" className="h-px w-full bg-line" />;
 }
 
-export default function HomePage() {
+export default async function HomePage({ params }: PageProps<"/[lang]">) {
+  const { lang } = await params;
+  if (!isLocale(lang)) notFound();
+  const copy = getCopy(lang);
+
   return (
     <div className="relative">
       <div
@@ -18,15 +25,17 @@ export default function HomePage() {
         <div className="mx-auto h-full max-w-[80rem] border-x border-line" />
       </div>
       <main id="main" className="relative">
-        <Hero />
+        <Hero copy={copy} />
         <Rule />
-        <Products />
+        <Products copy={copy} />
         <Rule />
-        <Services />
+        <Services copy={copy} />
         <Rule />
-        <About />
+        <Process copy={copy} />
         <Rule />
-        <Enquire />
+        <About copy={copy} />
+        <Rule />
+        <Enquire copy={copy} />
       </main>
     </div>
   );

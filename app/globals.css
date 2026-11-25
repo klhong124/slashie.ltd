@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-geist), "PingFang HK", "PingFang TC", "Noto Sans CJK TC", "Noto Sans TC",
+    "Microsoft JhengHei", ui-sans-serif, system-ui, sans-serif;
   --color-ink: #0a1512;
   --color-canvas: #fafafa;
   --color-surface: #ffffff;
@@ -102,11 +103,22 @@ summary::-webkit-details-marker {
 }
 
 .rise-4 {
-  animation-delay: 180ms;
+  animation-delay: 240ms;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .view-rise {
+      animation: fade-rise 800ms cubic-bezier(0.16, 1, 0.3, 1) both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 30%;
+    }
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .rise {
+  .rise,
+  .view-rise {
     animation: none;
   }
 }

@@ -1,31 +1,32 @@
-import { ButtonLink } from "@/components/button-link";
 import { SectionHeading } from "@/components/section-heading";
-import { offerings, servicesEnquiry, servicesIntro } from "@/content/services";
+import type { SiteCopy } from "@/content/types";
 
-export function Services() {
+export function Services({ copy }: { copy: SiteCopy }) {
+  const { services } = copy;
+
   return (
-    <section id="services" className="scroll-mt-20 py-14 md:py-20 lg:py-24 xl:py-32">
+    <section id="services" className="view-rise scroll-mt-20 py-16 md:py-24 lg:py-32">
       <div className="mx-auto w-full max-w-[80rem] px-4 md:px-6 lg:px-8">
-        <SectionHeading
-          eyebrow={servicesIntro.eyebrow}
-          title={servicesIntro.title}
-          lede={servicesIntro.lede}
-        />
-        <ul className="mt-10 grid gap-4 sm:grid-cols-2">
-          {offerings.map((offering) => (
+        <SectionHeading eyebrow={services.eyebrow} title={services.title} lede={services.lede} />
+        <aside className="mt-10 rounded-2xl border border-[#c6f6dd] bg-[#e7fbf0] p-6 md:p-10">
+          <p className="text-xs font-medium tracking-[0.08em] text-link uppercase">{services.cantoneseEyebrow}</p>
+          <h3 className="mt-3 max-w-[16ch] text-[34px] leading-[41px] font-medium tracking-[-0.03em] text-balance md:text-[44px] md:leading-[48px]">
+            {services.cantoneseTitle}
+          </h3>
+          <p className="mt-4 max-w-[46rem] text-lg leading-7">{services.cantoneseBody}</p>
+        </aside>
+        <ul className="mt-4 grid gap-4 sm:grid-cols-2">
+          {services.offerings.map((offering, index) => (
             <li
               key={offering.title}
-              className="rounded-xl border border-line bg-surface p-6 shadow-e1 transition-shadow duration-200 hover:shadow-e2"
+              className="rounded-xl border border-line bg-surface p-6 shadow-e1 transition-[transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:shadow-e2 motion-reduce:transform-none"
             >
-              <h3 className="text-lg leading-6 font-medium tracking-[-0.015em]">{offering.title}</h3>
-              <p className="mt-2 text-sm leading-5 text-muted">{offering.body}</p>
+              <p className="text-sm font-medium text-accent tabular-nums">{String(index + 1).padStart(2, "0")}</p>
+              <h3 className="mt-3 text-xl leading-7 font-medium tracking-[-0.02em]">{offering.title}</h3>
+              <p className="mt-2 text-sm leading-6 text-muted">{offering.body}</p>
             </li>
           ))}
         </ul>
-        <div className="mt-10 flex flex-col items-start gap-4 border-t border-line pt-8 sm:flex-row sm:items-center sm:justify-between">
-          <p className="max-w-md text-base leading-6 text-muted">{servicesEnquiry.body}</p>
-          <ButtonLink href="#enquire">{servicesEnquiry.label}</ButtonLink>
-        </div>
       </div>
     </section>
   );

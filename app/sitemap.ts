@@ -1,11 +1,18 @@
 import type { MetadataRoute } from "next";
-import { site } from "@/content/site";
+import { company } from "@/content/company";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const updated = "2026-11-25";
   return [
     {
-      url: site.url,
-      lastModified: "2026-11-25",
+      url: company.url,
+      lastModified: updated,
+      changeFrequency: "monthly",
+      priority: 1,
+    },
+    {
+      url: `${company.url}/zh-hk`,
+      lastModified: updated,
       changeFrequency: "monthly",
       priority: 1,
     },

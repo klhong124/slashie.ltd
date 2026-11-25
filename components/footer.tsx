@@ -14,7 +14,7 @@ export function Footer({ copy }: { copy: SiteCopy }) {
     <footer className="border-t border-line bg-canvas py-14">
       <div className="mx-auto grid w-full max-w-[80rem] gap-10 px-4 md:grid-cols-12 md:px-6 lg:px-8">
         <div className="md:col-span-5">
-          <Logo className="h-7 w-auto" />
+          <Logo className="h-7" />
           <p className="mt-4 max-w-sm text-base leading-6 text-pretty text-muted">{footer.tagline}</p>
           <a
             href={`mailto:${company.email}`}

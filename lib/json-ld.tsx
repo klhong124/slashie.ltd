@@ -19,7 +19,7 @@ export function organizationJsonLd(copy: SiteCopy) {
         legalName: company.legalName,
         url: company.url,
         logo: `${company.url}/brand/slashie-mark.svg`,
-        image: `${company.url}/brand/slashie-logo-light.svg`,
+        image: `${company.url}/brand/slashie-ltd.png`,
         email: company.email,
         description: copy.home.meta.description,
         slogan: copy.home.hero.title,

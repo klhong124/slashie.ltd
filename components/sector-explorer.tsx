@@ -101,6 +101,7 @@ export function SectorExplorer({ sectors }: { sectors: Sectors }) {
             <p className="text-lg leading-7 font-medium">{sector.outcome}</p>
           </div>
         </div>
+        {sector.addon ? <p className="mt-6 text-base leading-7 text-pretty text-muted">{sector.addon}</p> : null}
         <p className="mt-6 text-sm leading-6 text-muted">{sectors.note}</p>
       </div>
     </div>

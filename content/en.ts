@@ -25,7 +25,7 @@ export const en: SiteCopy = {
     cta: { href: "/contact", label: "Talk to us" },
     footer: {
       tagline:
-        "Websites, apps and online systems for Cantonese-speaking business owners in the UK.",
+        "A UK IT solutions company. We design and build websites, apps and online systems that help your business grow. Our focus is Cantonese-speaking business owners in the UK, but we work in English with anyone.",
       pages: "Pages",
       products: "Products",
       contact: "Contact",
@@ -44,17 +44,19 @@ export const en: SiteCopy = {
   },
   home: {
     meta: {
-      title: "Cantonese web design and apps for UK businesses | Slashie Ltd",
+      title: "IT solutions that help your business grow | Slashie Ltd",
       description:
-        "Websites, apps and online systems for Cantonese-speaking business owners in the UK. Work with Slashie Ltd in Cantonese (廣東話) or English: clear packages, fast bilingual sites, built to grow your business.",
+        "Slashie Ltd is a UK IT solutions company. We design and build websites, apps and online systems that help your business grow. Work with us in Cantonese or English. Sites can be bilingual: English and Traditional Chinese.",
     },
     hero: {
       eyebrow: "For Cantonese-speaking businesses in the UK",
-      title: "Grow your business. Talk it through in Cantonese.",
-      lede: "Slashie Ltd is a UK company. We design and build websites, apps and online systems that help your business grow — and you can work with us in Cantonese or English, from the first chat to launch.",
+      title: "IT solutions that help your business grow.",
+      lede: "Slashie Ltd is a UK IT solutions company. We design and build websites, apps and online systems that help your business grow. You can work with us in Cantonese or English, from the first chat to launch.",
+      continuation:
+        "Our focus is Cantonese-speaking business owners in the UK, but we work in English with anyone. Sites can be bilingual: English and Traditional Chinese.",
       primary: { href: "/contact", label: "Talk to us" },
       secondary: { href: "/services", label: "What we build" },
-      chips: ["Cantonese or English", "UK registered company", "Websites, apps, systems"],
+      chips: ["Cantonese or English", "UK registered company", "Websites, apps and systems"],
     },
     brief: {
       title: "New project",
@@ -114,13 +116,15 @@ export const en: SiteCopy = {
           problem: "Orders come by phone or through delivery apps that charge commission, and the menu online is out of date.",
           build: ["Bilingual menu site", "Direct online ordering or table booking", "Google Business Profile and map setup"],
           outcome: "More direct orders, less time on the phone.",
+          addon:
+            "Restaurants that want an in-shop till, table QR and their own online orders can also look at Dan, our POS product. It is being built and has not launched yet.",
         },
         {
           id: "beauty",
           name: "Beauty, hair & wellness",
           problem: "Bookings are juggled across Instagram messages, WhatsApp and calls.",
           build: ["Online booking", "Treatment menu in English and Chinese", "Local search pages for your area"],
-          outcome: "A diary that fills itself.",
+          outcome: "Fewer missed bookings, and a clearer diary.",
         },
         {
           id: "education",
@@ -182,8 +186,8 @@ export const en: SiteCopy = {
           body: "English and 繁中 side by side across the whole site, tagged correctly so Google shows each customer the right language.",
         },
         {
-          title: "Prices laid out up front",
-          body: "Clear packages and what each one includes, with the price agreed before any work starts.",
+          title: "The price is agreed before we start",
+          body: "We recommend a package, or scope a custom one, and confirm the price before any work starts. Package amounts are still being finalised; email us for a quote.",
         },
         {
           title: "Fast by default",
@@ -194,8 +198,8 @@ export const en: SiteCopy = {
           body: "No account managers in between. The person on your call designs and builds your project.",
         },
         {
-          title: "We run our own product",
-          body: "Slashie is live at slashie.app, so we know first-hand what it takes to grow something online.",
+          title: "We run our own products",
+          body: "Slashie is at slashie.app, and Dan is at dan.partners. Building and running them keeps us honest about what it takes to grow something online.",
         },
       ],
     },
@@ -224,9 +228,9 @@ export const en: SiteCopy = {
     },
     products: {
       eyebrow: "Products",
-      title: "We build our own products too",
-      lede: "Running our own products keeps us honest about what it takes to grow one.",
-      more: { href: "/products", label: "See the products" },
+      title: "We also build our own products",
+      lede: "Slashie and DanPartners are separate products. DanPartners trades under Slashie Ltd.",
+      more: { href: "/products", label: "Read more about our products" },
     },
     pricing: {
       eyebrow: "Pricing",
@@ -360,6 +364,8 @@ export const en: SiteCopy = {
       lede: "Picked so your site or app is easy to maintain and easy to hand over.",
       items: ["React", "Next.js", "TypeScript", "React Native", "Expo", "Storybook", "Figma", "Vercel"],
     },
+    danNote:
+      "If you run a restaurant or food shop, also look at Dan, our in-shop point of sale. It is being built and has not launched yet. The included Dan ordering template is on a Dan address; a custom domain or a fully customised site is provided by Slashie Ltd and is quoted separately.",
   },
   products: {
     meta: {
@@ -370,7 +376,7 @@ export const en: SiteCopy = {
     hero: {
       eyebrow: "Products",
       title: "Products we build and run.",
-      lede: "Slashie Ltd builds its own products alongside client work. Both trade under the same company.",
+      lede: "Alongside client work, Slashie Ltd builds and runs its own products. Slashie and DanPartners are separate products. DanPartners trades under Slashie Ltd.",
     },
     slashie: {
       name: "Slashie",
@@ -378,6 +384,7 @@ export const en: SiteCopy = {
       summary:
         "Post a task, get quotes from nearby workers, pick who you want. You pay the worker directly — Slashie takes no cut of the job.",
       category: "We're a local services marketplace.",
+      highlights: ["Free for customers", "Workers get a free monthly quote allowance", "No cut of the job"],
       points: [
         {
           title: "Free for customers",
@@ -385,11 +392,11 @@ export const en: SiteCopy = {
         },
         {
           title: "Free quotes for workers",
-          body: "Every worker gets free quotes each month. Slashie Pro removes the limit.",
+          body: "On the free plan, a worker can quote on up to 3 tasks a month. Slashie Pro removes that limit. Details are on slashie.app/pricing.",
         },
         {
           title: "No cut of the job",
-          body: "Customers pay workers directly, outside Slashie. We never take a share of the job.",
+          body: "Customers pay workers directly, outside Slashie. Slashie never holds job money, and never takes a share of the job.",
         },
       ],
       link: "Open slashie.app",
@@ -412,20 +419,30 @@ export const en: SiteCopy = {
           "Get paid directly by the customer.",
         ],
       },
-      missionTitle: "Why we're building it",
-      missionBody:
-        "AI is changing a lot of careers, and not everyone lands on the right side of that shift. We want to help those people find paid work close to home instead of sitting idle. If that brings unemployment down a little, the world gets a little better.",
     },
     dan: {
-      kicker: "Also from Slashie Ltd",
-      name: "DanPartners",
-      /**
-       * TODO(owner): Replace with approved DanPartners public copy.
-       * Do not add features, technology, customers, pricing or metrics
-       * until that copy exists. Public site: https://dan.partners
-       */
-      summary: "A separate product that trades under Slashie Ltd.",
-      link: "dan.partners",
+      wordmark: "Dan",
+      homeSublabel: "DanPartners",
+      sublabel: "DanPartners, a separate product that trades under Slashie Ltd",
+      dictionary: {
+        character: "單",
+        reading: "daan¹",
+        pos: "noun",
+        gloss: "an order slip; the bill",
+      },
+      title: "The point of sale that runs your shop.",
+      homeBody:
+        "Dan is an in-shop point of sale for restaurants and food shops of any cuisine. It runs the counter, takes orders at the table and on your own online site, and keeps working offline. 0% commission on your own online orders, on every plan.",
+      paragraphs: [
+        "Dan is an in-shop point of sale for restaurants and food shops of any cuisine. It runs the counter, takes orders at the table and on your own online site, and keeps working offline.",
+        "0% commission on your own online orders, on every plan. Plans begin at 0% commission, with 50 online orders a month included.",
+        "Menus and kitchen tickets in two languages, Chinese and English. You can talk to us about Dan in Cantonese, Mandarin or English.",
+        "Dan helps the shop run the business. The owner can switch on or off how orders are placed: the till, table QR for eat-in, collection, delivery by the shop, and delivery handed to Uber Direct. Each order goes to the right station in the kitchen. Dan can run beside the shop's current till, which still works.",
+        "The Dan template and a Dan address, such as yourshop.dan.partners, are included. A custom domain, or a fully customised website, is provided by Slashie Ltd. That work is not free.",
+      ],
+      status: "Dan is being built and has not launched yet.",
+      link: "Open dan.partners",
+      contact: { href: "/contact", label: "Talk to us" },
     },
   },
   pricing: {
@@ -616,7 +633,7 @@ export const en: SiteCopy = {
     founder: {
       name: "Ryan Kwan",
       role: "Founder",
-      body: "Ryan founded Slashie Ltd and leads its design and engineering. He also builds Slashie, the company's local services marketplace.",
+      body: "Ryan founded Slashie Ltd and leads its design and engineering. He also builds Slashie, the company's local services marketplace, and Dan, the company's point of sale for restaurants and food shops. Dan is being built and has not launched yet.",
       href: "https://ryankwan.dev",
       linkLabel: "ryankwan.dev",
       tags: ["React", "Next.js", "TypeScript", "Design systems", "Motion"],

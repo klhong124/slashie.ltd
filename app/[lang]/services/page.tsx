@@ -51,6 +51,9 @@ export default async function ServicesPage({ params }: PageProps<"/[lang]/servic
             </li>
           ))}
         </ol>
+        <p className="mt-8 max-w-[70ch] border-t border-line pt-8 text-base leading-7 text-pretty text-muted">
+          {services.danNote}
+        </p>
       </Section>
       <Section>
         <div className="grid gap-10 lg:grid-cols-12 lg:items-end">

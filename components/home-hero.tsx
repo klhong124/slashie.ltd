@@ -48,12 +48,13 @@ export function HomeHero({ copy }: { copy: SiteCopy }) {
             <span className="size-1.5 rounded-full bg-action" aria-hidden="true" />
             {hero.eyebrow}
           </Eyebrow>
-          <h1 className="rise rise-2 mt-6 max-w-[14ch] text-[44px] leading-[1.04] font-medium tracking-[-0.045em] text-balance md:text-[64px] lg:text-[72px] lg:leading-[1]">
+          <h1 className="rise rise-2 mt-6 max-w-[14em] text-[44px] leading-[1.04] font-medium tracking-[-0.045em] text-balance md:max-w-[12em] md:text-[64px] lg:text-[72px] lg:leading-[1]">
             {hero.title}
           </h1>
-          <p className="rise rise-3 mt-6 max-w-[40rem] text-lg leading-7 text-pretty text-muted md:text-xl md:leading-8">
-            {hero.lede}
-          </p>
+          <div className="rise rise-3 mt-6 max-w-[40rem] space-y-4 text-lg leading-7 text-pretty text-muted md:text-xl md:leading-8">
+            <p>{hero.lede}</p>
+            <p>{hero.continuation}</p>
+          </div>
           <div className="rise rise-4 mt-8 flex flex-col gap-3 sm:flex-row">
             {hero.primary ? (
               <ButtonLink href={localeHref(locale, hero.primary.href)}>

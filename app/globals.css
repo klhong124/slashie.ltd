@@ -228,3 +228,23 @@ summary::-webkit-details-marker {
     animation: none;
   }
 }
+
+/* Dan theme, scoped to the Dan panel. Do not reuse these tokens site-wide. */
+.dan-panel {
+  background: #f5eedc;
+  color: #1b1916;
+  border: 3px solid #1b1916;
+  font-family: var(--font-dan-sans), var(--font-dan-cjk), "PingFang TC", "PingFang HK", "Noto Sans CJK TC",
+    "Microsoft JhengHei", sans-serif;
+}
+
+.dan-wordmark {
+  font-family: var(--font-dan-mark), "Bodoni Moda", "Times New Roman", serif;
+  font-weight: 600;
+  font-variation-settings: "opsz" 72, "wght" 600;
+  letter-spacing: 0;
+}
+
+.dan-mono {
+  font-family: var(--font-dan-mono), ui-monospace, monospace;
+}

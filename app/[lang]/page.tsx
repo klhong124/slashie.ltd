@@ -146,8 +146,19 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
           <TextLink href={localeHref(lang, home.products.more.href)}>{home.products.more.label}</TextLink>
         </div>
         <div className="mt-12 space-y-4">
-          <SlashieCard slashie={products.slashie} />
-          <DanCard dan={products.dan} />
+          <SlashieCard
+            slashie={products.slashie}
+            more={home.products.more}
+            locale={lang}
+            newTab={copy.chrome.newTab}
+          />
+          <DanCard
+            dan={products.dan}
+            variant="home"
+            more={home.products.more}
+            locale={lang}
+            newTab={copy.chrome.newTab}
+          />
         </div>
       </Section>
 

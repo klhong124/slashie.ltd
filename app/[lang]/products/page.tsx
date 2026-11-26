@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { CtaBand } from "@/components/cta-band";
 import { PageHero } from "@/components/page-hero";
 import { DanCard, SlashieCard, SlashieHowItWorks } from "@/components/product-cards";
-import { Eyebrow, Section } from "@/components/section";
+import { Section } from "@/components/section";
 import { getCopy, isLocale, pageMetadata } from "@/content/get-copy";
 import { JsonLd, breadcrumbJsonLd } from "@/lib/json-ld";
 
@@ -24,24 +24,18 @@ export default async function ProductsPage({ params }: PageProps<"/[lang]/produc
       <JsonLd data={breadcrumbJsonLd(copy, "/products", products.meta.title)} />
       <PageHero hero={products.hero} locale={lang} />
       <Section tone="canvas">
-        <SlashieCard slashie={slashie} detailed headingLevel="h2" />
+        <SlashieCard slashie={slashie} detailed headingLevel="h2" locale={lang} newTab={copy.chrome.newTab} />
       </Section>
       <Section>
-        <h2 className="text-[30px] leading-[38px] font-medium tracking-[-0.03em] md:text-[34px] md:leading-[41px]">
+        <h3 className="text-[30px] leading-[38px] font-medium tracking-[-0.03em] md:text-[34px] md:leading-[41px]">
           {slashie.howTitle}
-        </h2>
+        </h3>
         <div className="mt-10">
           <SlashieHowItWorks slashie={slashie} />
         </div>
-        <div className="mt-4 rounded-2xl bg-[#0c1310] p-6 text-white md:p-10">
-          <Eyebrow tone="inverse">{slashie.missionTitle}</Eyebrow>
-          <p className="mt-4 max-w-[60ch] text-xl leading-8 text-pretty text-white/85 md:text-2xl md:leading-9">
-            {slashie.missionBody}
-          </p>
-        </div>
       </Section>
       <Section tone="canvas">
-        <DanCard dan={products.dan} headingLevel="h2" />
+        <DanCard dan={products.dan} variant="detail" headingLevel="h2" locale={lang} newTab={copy.chrome.newTab} />
       </Section>
       <CtaBand copy={copy} />
     </>

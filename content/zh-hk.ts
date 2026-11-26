@@ -2,8 +2,9 @@ import type { SiteCopy } from "@/content/types";
 import { company, registeredOffice } from "@/content/company";
 
 /**
- * Hong Kong Traditional Chinese. Body copy is written Chinese (書面語);
- * headlines and calls to action use a spoken Cantonese tone on purpose.
+ * Hong Kong Traditional Chinese. Body copy is written Chinese (書面語).
+ * Company and product headlines changed in the IT-solutions update use the
+ * same written register. Untouched headlines may still use a spoken tone.
  * Slashie product lines are faithful translations of the locked English copy,
  * and "Slashie Pro" stays the product name.
  */
@@ -26,7 +27,8 @@ export const zhHk: SiteCopy = {
     ],
     cta: { href: "/contact", label: "同我哋傾吓" },
     footer: {
-      tagline: "為在英國做生意的廣東話老闆，設計及建造網站、應用程式和網上系統。",
+      tagline:
+        "一間英國資訊科技方案公司。我們設計及建造網站、應用程式和網上系統，協助你的業務增長。我們專注服務在英國營商的廣東話老闆，同時亦會以英語與任何客戶合作。",
       pages: "頁面",
       products: "產品",
       contact: "聯絡",
@@ -45,17 +47,19 @@ export const zhHk: SiteCopy = {
   },
   home: {
     meta: {
-      title: "英國廣東話網頁設計及 App 開發 | Slashie Ltd",
+      title: "資訊科技方案，助你發展業務 | Slashie Ltd",
       description:
-        "專為在英國做生意的廣東話老闆，設計及建造網站、App 和網上系統。可用廣東話或英語合作：套餐清晰、網站快、中英雙語，幫你盤生意增長。",
+        "Slashie Ltd 是一間英國資訊科技方案公司。我們設計及建造網站、應用程式和網上系統，協助你的業務增長。可用廣東話或英語合作。網站可做中英雙語：英文及繁體中文。",
     },
     hero: {
       eyebrow: "專為英國的廣東話生意人",
-      title: "用廣東話，幫你盤生意做大。",
-      lede: "Slashie Ltd 是一間英國公司。我們設計及建造網站、應用程式和網上系統，幫你的生意增長。由第一次傾偈到正式上線，都可以用廣東話或英語同我們溝通。",
+      title: "資訊科技方案，助你發展業務。",
+      lede: "Slashie Ltd 是一間英國資訊科技方案公司。我們設計及建造網站、應用程式和網上系統，協助你的業務增長。由初次洽談到正式上線，都可以用廣東話或英語與我們溝通。",
+      continuation:
+        "我們專注服務在英國營商的廣東話老闆，同時亦會以英語與任何客戶合作。網站可做中英雙語：英文及繁體中文。",
       primary: { href: "/contact", label: "同我哋傾吓" },
       secondary: { href: "/services", label: "我哋做乜" },
-      chips: ["廣東話或英語", "英國註冊公司", "網站・App・系統"],
+      chips: ["廣東話或英語", "英國註冊公司", "網站、應用程式與系統"],
     },
     brief: {
       title: "新項目",
@@ -115,13 +119,15 @@ export const zhHk: SiteCopy = {
           problem: "訂單靠電話，或經收取佣金的外賣平台；網上餐牌又未更新。",
           build: ["中英雙語餐牌網站", "直接網上落單或訂枱", "Google 商家檔案及地圖設定"],
           outcome: "多啲直接訂單，少啲時間聽電話。",
+          addon:
+            "若需要店內收銀、枱面二維碼和自家網上落單，亦可了解我們仍在開發、尚未推出的收銀系統 Dan。",
         },
         {
           id: "beauty",
           name: "美容、髮型及保健",
           problem: "預約分散在 Instagram 私訊、WhatsApp 和電話之間。",
           build: ["網上預約", "中英文療程價目", "針對你所在地區的搜尋頁面"],
-          outcome: "預約表自己填滿。",
+          outcome: "減少漏約，預約更有條理。",
         },
         {
           id: "education",
@@ -149,7 +155,7 @@ export const zhHk: SiteCopy = {
           name: "零售及網店",
           problem: "貨品在店舖賣得到，但關門後就賣不到。",
           build: ["網上商店", "中英雙語產品頁", "經你的支付商收款"],
-          outcome: "關咗門都照樣有生意。",
+          outcome: "店舖休息時仍可銷售。",
         },
       ],
     },
@@ -183,8 +189,8 @@ export const zhHk: SiteCopy = {
           body: "整個網站中英並行，並正確標示語言，讓 Google 向每位客人顯示合適的版本。",
         },
         {
-          title: "價錢一早講清楚",
-          body: "套餐和內容清清楚楚，開工前先與你確認價錢。",
+          title: "開工前先確認價錢",
+          body: "我們會建議合適套餐，或按需要訂定範圍，並在任何工作開始前先確認價錢。套餐金額仍在落實，歡迎電郵索取報價。",
         },
         {
           title: "網站夠快",
@@ -196,7 +202,7 @@ export const zhHk: SiteCopy = {
         },
         {
           title: "我們有自家產品",
-          body: "Slashie 已在 slashie.app 上線，所以我們親身知道要令網上業務增長需要甚麼。",
+          body: "Slashie 見 slashie.app，Dan 見 dan.partners。親自開發和營運這些產品，讓我們清楚知道要讓網上業務增長需要甚麼。",
         },
       ],
     },
@@ -225,9 +231,9 @@ export const zhHk: SiteCopy = {
     },
     products: {
       eyebrow: "產品",
-      title: "我們亦有自家產品",
-      lede: "親身經營產品，令我們清楚知道要令一盤生意增長需要甚麼。",
-      more: { href: "/products", label: "睇吓產品" },
+      title: "我們亦開發自家產品",
+      lede: "Slashie 與 DanPartners 是兩項獨立產品。DanPartners 以 Slashie Ltd 名義經營。",
+      more: { href: "/products", label: "了解我們的產品" },
     },
     pricing: {
       eyebrow: "收費",
@@ -326,6 +332,8 @@ export const zhHk: SiteCopy = {
       lede: "選用這些技術，令你的網站或 App 容易維護，亦容易交接。",
       items: ["React", "Next.js", "TypeScript", "React Native", "Expo", "Storybook", "Figma", "Vercel"],
     },
+    danNote:
+      "若你經營餐廳或食品店，亦可了解我們的店內收銀系統 Dan。Dan 仍在開發中，尚未推出。附送的 Dan 落單模板使用 Dan 網址；自訂域名或完全自訂的網站由 Slashie Ltd 提供，並另行報價。",
   },
   products: {
     meta: {
@@ -334,8 +342,8 @@ export const zhHk: SiteCopy = {
     },
     hero: {
       eyebrow: "產品",
-      title: "我哋自己做、自己營運嘅產品。",
-      lede: "除了客戶項目，Slashie Ltd 亦開發自家產品。兩者都以同一間公司經營。",
+      title: "我們自行開發並營運的產品。",
+      lede: "除客戶項目外，Slashie Ltd 亦開發和營運自家產品。Slashie 與 DanPartners 是兩項獨立產品。DanPartners 以 Slashie Ltd 名義經營。",
     },
     slashie: {
       name: "Slashie",
@@ -343,6 +351,7 @@ export const zhHk: SiteCopy = {
       summary:
         "發佈任務，向附近的工作者收取報價，再選擇你想要的人。你直接付款給工作者 —— Slashie 不會從工作中抽成。",
       category: "我們是本地服務市集。",
+      highlights: ["客戶免費", "工作者每月享有免費報價額度", "不從工作抽成"],
       points: [
         {
           title: "客戶免費",
@@ -350,11 +359,11 @@ export const zhHk: SiteCopy = {
         },
         {
           title: "工作者每月免費報價",
-          body: "每位工作者每月都有免費報價額度；訂閱 Slashie Pro 即可無限報價。",
+          body: "免費計劃下，工作者每月最多可為 3 項任務報價；訂閱 Slashie Pro 即可取消此上限。詳情見 slashie.app/pricing。",
         },
         {
-          title: "不抽佣金",
-          body: "客戶在 Slashie 以外直接付款給工作者，我們不會從工作中抽取任何佣金。",
+          title: "不從工作抽成",
+          body: "客戶在 Slashie 以外直接付款給工作者。Slashie 不會代收或保管工作酬金，亦不會從中抽成。",
         },
       ],
       link: "前往 slashie.app",
@@ -377,20 +386,30 @@ export const zhHk: SiteCopy = {
           "由客戶直接付款給你。",
         ],
       },
-      missionTitle: "我們為何要做 Slashie",
-      missionBody:
-        "AI 正在改變很多行業，並非每個人都站在有利的一方。我們希望幫助這些人在附近找到有薪工作，而不是賦閒在家。如果能令失業率降低一點，世界也會好一點。",
     },
     dan: {
-      kicker: "同屬 Slashie Ltd",
-      name: "DanPartners",
-      /**
-       * TODO(owner): Replace with approved DanPartners public copy.
-       * Do not add features, technology, customers, pricing or metrics
-       * until that copy exists. Public site: https://dan.partners
-       */
-      summary: "另一項以 Slashie Ltd 名義經營的產品。",
-      link: "dan.partners",
+      wordmark: "Dan",
+      homeSublabel: "DanPartners",
+      sublabel: "DanPartners，一項以 Slashie Ltd 名義經營的獨立產品",
+      dictionary: {
+        character: "單",
+        reading: "daan¹",
+        pos: "名詞",
+        gloss: "訂單；賬單",
+      },
+      title: "替你打理整間店的收銀系統。",
+      homeBody:
+        "Dan 是為餐廳和食品店而設的店內收銀系統（POS），任何菜式都適用。它負責櫃檯運作，接收枱面和自家網站的訂單，斷網也照常運作。每個計劃的自家網上訂單都是零佣金。",
+      paragraphs: [
+        "Dan 是為餐廳和食品店而設的店內收銀系統（POS），任何菜式都適用。它負責櫃檯運作，接收枱面和自家網站的訂單，斷網也照常運作。",
+        "每個計劃的自家網上訂單都是零佣金。計劃由零佣金、每月 50 張網上訂單開始。",
+        "餐牌和廚房單支援中文和英文兩種語言。了解 Dan 時，可以用廣東話、普通話或英語與我們溝通。",
+        "Dan 幫店舖打理生意。老闆可以開關落單方式：收銀、枱面二維碼堂食、自取、店舖自己外送，以及交由 Uber Direct 外送。每張訂單都會傳到廚房對應的工作站。Dan 可以放在店舖現有的收銀旁邊，現有的收銀照常運作。",
+        "Dan 模板和 Dan 網址（例如 yourshop.dan.partners）已包含在內。自訂域名，或完全自訂的網站，由 Slashie Ltd 提供；這項工作不是免費的。",
+      ],
+      status: "Dan 仍在開發中，尚未推出。",
+      link: "前往 dan.partners",
+      contact: { href: "/contact", label: "聯絡我們" },
     },
   },
   pricing: {
@@ -551,7 +570,7 @@ export const zhHk: SiteCopy = {
     founder: {
       name: "Ryan Kwan",
       role: "創辦人",
-      body: "Ryan 創立了 Slashie Ltd，帶領公司的設計與工程工作，亦親自開發公司旗下的本地服務市集 Slashie。",
+      body: "Ryan 創立了 Slashie Ltd，帶領公司的設計與工程工作，並親自開發公司旗下的本地服務市集 Slashie，以及為餐廳和食品店而設的收銀系統 Dan。Dan 仍在開發中，尚未推出。",
       href: "https://ryankwan.dev",
       linkLabel: "ryankwan.dev",
       tags: ["React", "Next.js", "TypeScript", "設計系統", "動效"],

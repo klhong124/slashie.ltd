@@ -74,6 +74,8 @@ export type Sector = {
   problem: string;
   build: string[];
   outcome: string;
+  /** Optional aim shown under one sector. Not a past project. */
+  addon?: string;
 };
 
 export type TrustItem = {
@@ -119,7 +121,7 @@ export type SiteCopy = {
   };
   home: {
     meta: Meta;
-    hero: Hero & { chips: string[] };
+    hero: Hero & { chips: string[]; continuation: string };
     brief: {
       title: string;
       status: string;
@@ -147,6 +149,8 @@ export type SiteCopy = {
     hero: Hero;
     includesLabel: string;
     items: Service[];
+    /** Short note after the service list. Corporate styling, not the Dan theme. */
+    danNote: string;
     stack: SectionIntro & { items: string[] };
   };
   products: {
@@ -157,19 +161,33 @@ export type SiteCopy = {
       tagline: string;
       summary: string;
       category: string;
+      /** Short labels for the home teaser. */
+      highlights: string[];
       points: Card[];
       link: string;
       howTitle: string;
       customers: StepList;
       workers: StepList;
-      missionTitle: string;
-      missionBody: string;
     };
     dan: {
-      kicker: string;
-      name: string;
-      summary: string;
+      wordmark: string;
+      /** Short label under the wordmark on Home. */
+      homeSublabel: string;
+      /** Longer label on the products page. */
+      sublabel: string;
+      dictionary: {
+        character: string;
+        reading: string;
+        pos: string;
+        gloss: string;
+      };
+      title: string;
+      /** Single intro used on Home, including the 0% commission line. */
+      homeBody: string;
+      paragraphs: string[];
+      status: string;
       link: string;
+      contact: Action;
     };
   };
   pricing: {
